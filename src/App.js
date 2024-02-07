@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const myprods = [
@@ -79,12 +79,91 @@ const miniProjects = [
 ];
 
 function App() {
+  const [showSplashscreen, setShowSplash] = useState(true);
+
+  if (showSplashscreen) return <Splash setShowSplash={setShowSplash} />;
   return (
     <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tl from-cyan-500 to-teal-500 text-white">
       <ProfileCard />
       <Products title="Tech Products" products={myprods} />
       <Products title="Passion Projects" products={projects} />
       <Products title="Mini Projects" products={miniProjects} />
+    </div>
+  );
+}
+function Splash({ setShowSplash }) {
+  const [muted, setMuted] = useState(true);
+  const [enter, setEnter] = useState(false);
+  const [playing, isPlaying] = useState(true);
+  const vidRef = useRef(null);
+  const handlePlayVideo = () => {
+    if (playing) {
+      vidRef.current.pause();
+    } else {
+      vidRef.current.play();
+    }
+    isPlaying(!playing);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setEnter(true);
+    }, 6000);
+  }, []);
+  return (
+    <div className="relative m-0 p-0 flex justify-center items-center py-8 w-screen h-screen">
+      {enter ? (
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <h1 className="text-white text-4xl md:text-6xl p-2 z-50 tracking-widest">
+            Aadesh's Portfolio
+          </h1>
+          <button
+            className="hover:animate-pulse px-4 py-3 border border-gray-400 z-50 text-white tracking-widest text-3xl uppercase bg-white bg-opacity-10"
+            onClick={() => setShowSplash(false)}
+          >
+            Enter
+          </button>
+        </div>
+      ) : (
+        <button
+          className="p-2 border border-gray-400 z-50 text-white flex justify-center items-center gap-4 tracking-widest uppercase rounded-lg bg-black bg-opacity-20"
+          onClick={() => setMuted(!muted)}
+        >
+         Music <img
+            className="w-8 h-8 rounded-full"
+            src={muted ? "./unmute.svg" : "./mute.svg"}
+            alt="mute"
+          />
+        </button>
+      )}
+
+      {enter && (
+        <button
+          className="absolute bottom-4 left-4 p-2 border border-gray-400 z-50 text-white tracking-widest uppercase rounded-full bg-white bg-opacity-20"
+          onClick={() => setMuted(!muted)}
+        >
+          <img
+            className="w-8 h-8 rounded-full"
+            src={muted ? "./unmute.svg" : "./mute.svg"}
+            alt="mute"
+          />
+        </button>
+      )}
+      <button
+        className="absolute bottom-4 right-4 px-4 py-3 border border-gray-400 z-50 text-black tracking-widest uppercase bg-white bg-opacity-20"
+        onClick={() => handlePlayVideo()}
+      >
+        {playing ? "Pause" : "Play"}
+      </button>
+      <video
+        ref={vidRef}
+        autoPlay
+        muted={muted}
+        src={"./videos/splash.mp4"}
+        className="fixed left-0 top-0 w-full h-full min-h-full min-w-full aspect-video object-cover md:object-fill"
+      >
+        Your browser does not support HTML5 video.
+      </video>
     </div>
   );
 }
