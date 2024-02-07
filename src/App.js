@@ -158,6 +158,7 @@ function Splash({ setShowSplash }) {
       <video
         ref={vidRef}
         autoPlay
+        playsInline
         muted={muted}
         src={"./videos/splash.mp4"}
         className="fixed left-0 top-0 w-full h-full min-h-full min-w-full aspect-video object-cover md:object-fill"
