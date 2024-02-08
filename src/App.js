@@ -126,12 +126,12 @@ function Splash({ setShowSplash }) {
         </div>
       ) : (
         <button
-          className="p-2 border border-gray-400 z-50 text-white flex justify-center items-center gap-4 tracking-widest uppercase rounded-lg bg-black bg-opacity-20"
+          className=" px-4 py-3 border border-gray-400 z-50 text-white flex justify-center items-center gap-4 tracking-widest uppercase bg-black bg-opacity-20"
           onClick={() => setMuted(!muted)}
         >
          Music <img
             className="w-8 h-8 rounded-full"
-            src={muted ? "./unmute.svg" : "./mute.svg"}
+            src={muted ? "./mute.svg" : "./unmute.svg" }
             alt="mute"
           />
         </button>
@@ -144,13 +144,13 @@ function Splash({ setShowSplash }) {
         >
           <img
             className="w-8 h-8 rounded-full"
-            src={muted ? "./unmute.svg" : "./mute.svg"}
+            src={muted ? "./mute.svg" : "./unmute.svg" }
             alt="mute"
           />
         </button>
       )}
       <button
-        className="absolute bottom-4 right-4 px-4 py-3 border border-gray-400 z-50 text-black tracking-widest uppercase bg-white bg-opacity-20"
+        className="absolute bottom-4 right-4 px-4 py-3 border border-gray-400 z-50 text-white tracking-widest uppercase bg-white bg-opacity-20"
         onClick={() => handlePlayVideo()}
       >
         {playing ? "Pause" : "Play"}
