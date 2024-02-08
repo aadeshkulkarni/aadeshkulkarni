@@ -175,7 +175,7 @@ function ProfileCard() {
       <div className="w-full flex justify-center col-span-12 items-center md:col-span-4">
         <img
           className="rounded-full border-2 m-4 md:m-8 w-[240px]"
-          src="./aadesh-kulkarni.png"
+          src="./aadesh-kulkarni.jpg"
           alt="aadesh kulkarni"
         />
       </div>
