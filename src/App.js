@@ -185,7 +185,7 @@ function ProfileCard() {
         <div className="p-2 text-md md:text-lg font-light text-gray-100 text-center md:text-left">
           Web Engineering | Frontend | Backend | Generative AI
         </div>
-        <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider uppercase ">
+        <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider">
           <a
             className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://www.linkedin.com/in/aadeshkulkarni/"
