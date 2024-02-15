@@ -82,7 +82,7 @@ function App() {
   const [showSplashscreen, setShowSplash] = useState(true);
   if (showSplashscreen) return <Splash setShowSplash={setShowSplash} />;
   return (
-    <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tl from-cyan-500 to-teal-500 text-white">
+    <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tl from-sky-500 to-sky-700 text-white md:bg-white md:bg-gradient-t md:from-white md:to-white">
       <ProfileCard />
       <Products title="Tech Products" products={myprods} />
       <Products title="Passion Projects" products={projects} />
@@ -156,49 +156,53 @@ function Splash({ setShowSplash }) {
 
 function ProfileCard() {
   return (
-    <div className="w-full md:w-1/2 p-4 md:border grid grid-cols-12 items-center gap-4 ">
+    <div className="drop-shadow-lg w-full md:w-2/3 p-4 px-8 md:border grid grid-cols-12 items-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 md:shadow-lg md:shadow-gray-500  text-white">
       <div className="w-full flex justify-center col-span-12 items-center md:col-span-4">
         <img
           className="rounded-full border-2 m-4 md:m-8 w-[240px]"
           src="./aadesh-kulkarni.jpg"
           alt="aadesh kulkarni"
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src="./aadesh-kulkarni.jpg"
+          }}
         />
       </div>
       <div className="w-full col-span-12 md:col-span-8 flex flex-col justify-center items-center md:items-start">
-        <div className="text-4xl md:text-6xl font-bold">Aadesh Kulkarni</div>
+        <div className="text-4xl md:text-6xl font-bold drop-shadow-lg">Aadesh Kulkarni</div>
         <div className="p-2 text-md md:text-lg font-light text-gray-100">
           Web Engineer | Frontend | Backend | Generative AI
         </div>
-        <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wide uppercase font-semibold">
+        <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider uppercase ">
           <a
-            className="w-full md:w-auto text-center px-4 py-3 md:py-2  border border-white hover:animate-pulse"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2  border border-white hover:bg-black hover:bg-opacity-10"
             href="https://www.linkedin.com/in/aadeshkulkarni/"
           >
             LinkedIn
           </a>
           <a
-            className="w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:animate-pulse"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
             href="https://www.youtube.com/@AadeshKulkarni"
           >
             Youtube
           </a>
           <a
-            className="w-full md:w-auto text-center px-2 py-3 md:py-2 border border-white  hover:animate-pulse"
-            href="https://stackoverflow.com/users/8389274/aadesh"
-          >
-            Stackoverflow
-          </a>
-          <a
-            className="w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:animate-pulse"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
             href="https://github.com/aadeshkulkarni"
           >
             Github
           </a>
           <a
-            className="w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:animate-pulse"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
             href="https://www.instagram.com/aadeshkulkarni/"
           >
             Instagram
+          </a>
+          <a
+            className="md:col-span-4 w-full md:w-auto text-center px-2 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
+            href="https://stackoverflow.com/users/8389274/aadesh"
+          >
+            Stackoverflow
           </a>
         </div>
       </div>
@@ -209,9 +213,9 @@ function ProfileCard() {
 function Products({ title, products }) {
   const [show, setShow] = useState(false);
   return (
-    <div className="w-full md:w-1/2 p-4 border-t md:border border-gray-200 flex flex-col justify-center gap-4 ">
+    <div className="w-full md:w-2/3 p-4 border-t md:border border-gray-200 flex flex-col justify-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 text-white md:shadow-lg md:shadow-gray-500 ">
       <div
-        className="py-4 px-4 text-2xl font-bold tracking-wide flex justify-between items-center cursor-pointer"
+        className="p-4 text-2xl font-bold tracking-wide flex justify-between items-center cursor-pointer"
         onClick={() => setShow(!show)}
       >
         {title} <button>↡</button>
@@ -220,7 +224,7 @@ function Products({ title, products }) {
         <div className="flex flex-col justify-center items-center gap-2 w-full">
           {products &&
             products.map((product) => (
-              <div className="w-full p-4 flex justify-between items-center bg-white bg-opacity-20 ">
+              <div className="w-full p-4 flex justify-between items-center border-b border-sky-600">
                 <div className="tracking-wide font-normal text-xl">{product.title}</div>
                 <a className="p-2 border border-white hover:animate-pulse" href={product.url}>
                   Visit app
