@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 
 const myprods = [
@@ -80,7 +80,6 @@ const miniProjects = [
 
 function App() {
   const [showSplashscreen, setShowSplash] = useState(true);
-
   if (showSplashscreen) return <Splash setShowSplash={setShowSplash} />;
   return (
     <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tl from-cyan-500 to-teal-500 text-white">
@@ -92,9 +91,9 @@ function App() {
   );
 }
 function Splash({ setShowSplash }) {
+  const [videoLoaded,setVideoLoaded] = useState(false)
   const [muted, setMuted] = useState(true);
-  const [enter, setEnter] = useState(false);
-  const [playing, isPlaying] = useState(true);
+  const [playing, isPlaying] = useState(false);
   const vidRef = useRef(null);
   const handlePlayVideo = () => {
     if (playing) {
@@ -105,41 +104,22 @@ function Splash({ setShowSplash }) {
     isPlaying(!playing);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setEnter(true);
-    }, 6000);
-  }, []);
   return (
     <div className="relative m-0 p-0 flex justify-center items-center py-8 w-screen h-screen">
-      {enter ? (
+      {videoLoaded && (
         <div className="flex flex-col gap-4 justify-center items-center">
-          <h1 className="text-white text-4xl md:text-6xl p-2 z-50 tracking-widest">
-            Aadesh's Portfolio
-          </h1>
           <button
-            className="hover:animate-pulse px-4 py-3 border border-gray-400 z-50 text-white tracking-widest text-3xl uppercase bg-white bg-opacity-10"
+            className="hover:animate-pulse px-4 py-3 border border-gray-700 z-50 text-white tracking-widest text-3xl uppercase bg-black bg-opacity-50"
             onClick={() => setShowSplash(false)}
           >
             Enter
           </button>
         </div>
-      ) : (
-        <button
-          className=" px-4 py-3 border border-gray-400 z-50 text-white flex justify-center items-center gap-4 tracking-widest uppercase bg-black bg-opacity-20"
-          onClick={() => setMuted(!muted)}
-        >
-         Music <img
-            className="w-8 h-8 rounded-full"
-            src={muted ? "./mute.svg" : "./unmute.svg" }
-            alt="mute"
-          />
-        </button>
       )}
 
-      {enter && (
+      {videoLoaded && (
         <button
-          className="absolute bottom-4 left-4 p-2 border border-gray-400 z-50 text-white tracking-widest uppercase rounded-full bg-white bg-opacity-20"
+          className="absolute bottom-4 animate-pulse left-4 p-2 border border-gray-400 z-50 tracking-widest uppercase rounded-full bg-black bg-opacity-20"
           onClick={() => setMuted(!muted)}
         >
           <img
@@ -150,7 +130,7 @@ function Splash({ setShowSplash }) {
         </button>
       )}
       <button
-        className="absolute bottom-4 right-4 px-4 py-3 border border-gray-400 z-50 text-white tracking-widest uppercase bg-white bg-opacity-20"
+        className="absolute bottom-4 right-4 px-4 py-3 border border-gray-400 z-50 text-white tracking-widest uppercase bg-black bg-opacity-20"
         onClick={() => handlePlayVideo()}
       >
         {playing ? "Pause" : "Play"}
@@ -159,6 +139,11 @@ function Splash({ setShowSplash }) {
         ref={vidRef}
         autoPlay
         playsInline
+        onLoadedData={()=>{
+          setVideoLoaded(true)
+          isPlaying(true)
+          handlePlayVideo()
+        }}
         muted={muted}
         src={"./videos/splash.mp4"}
         className="fixed left-0 top-0 w-full h-full min-h-full min-w-full aspect-video object-cover md:object-fill"
