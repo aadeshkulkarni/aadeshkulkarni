@@ -182,8 +182,8 @@ function ProfileCard() {
       </div>
       <div className="w-full col-span-12 md:col-span-8 flex flex-col justify-center items-center md:items-start">
         <div className="text-4xl md:text-6xl font-bold drop-shadow-lg">Aadesh Kulkarni</div>
-        <div className="p-2 text-md md:text-lg font-light text-gray-100">
-          Web Engineer | Frontend | Backend | Generative AI
+        <div className="p-2 text-md md:text-lg font-light text-gray-100 text-center md:text-left">
+          Web Engineering | Frontend | Backend | Generative AI
         </div>
         <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider uppercase ">
           <a
