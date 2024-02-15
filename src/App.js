@@ -187,31 +187,31 @@ function ProfileCard() {
         </div>
         <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider uppercase ">
           <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2  border border-white hover:bg-black hover:bg-opacity-10"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://www.linkedin.com/in/aadeshkulkarni/"
           >
             LinkedIn
           </a>
           <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://www.youtube.com/@AadeshKulkarni"
           >
             Youtube
           </a>
           <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://github.com/aadeshkulkarni"
           >
             Github
           </a>
           <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
+            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://www.instagram.com/aadeshkulkarni/"
           >
             Instagram
           </a>
           <a
-            className="md:col-span-4 w-full md:w-auto text-center px-2 py-3 md:py-2 border border-white hover:bg-black hover:bg-opacity-10"
+            className="md:col-span-4 w-full md:w-auto text-center px-2 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
             href="https://stackoverflow.com/users/8389274/aadesh"
           >
             Stackoverflow
