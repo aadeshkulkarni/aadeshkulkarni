@@ -225,7 +225,7 @@ function ProfileCard() {
 function Products({ title, products }) {
   const [show, setShow] = useState(false);
   return (
-    <div className="w-full md:w-2/3 p-4 border-t md:border border-gray-200 flex flex-col justify-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 text-white md:shadow-lg md:shadow-gray-500 ">
+    <div className="w-full md:w-2/3 p-4 border-t md:border border-sky-600 md:border-gray-200 flex flex-col justify-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 text-white md:shadow-lg md:shadow-gray-500 ">
       <div
         className="p-4 text-2xl font-bold tracking-wide flex justify-between items-center cursor-pointer"
         onClick={() => setShow(!show)}
@@ -238,8 +238,8 @@ function Products({ title, products }) {
             products.map((product) => (
               <div className="w-full p-4 flex justify-between items-center border-b border-sky-600">
                 <div className="tracking-wide font-normal text-xl">{product.title}</div>
-                <a className="p-2 border border-white hover:animate-pulse" href={product.url}>
-                  Visit app
+                <a className="p-2 text-lg hover:animate-pulse" href={product.url}>
+                  →
                 </a>
               </div>
             ))}
