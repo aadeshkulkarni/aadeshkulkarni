@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const myprods = [
@@ -95,6 +95,8 @@ function Splash({ setShowSplash }) {
   const [muted, setMuted] = useState(true);
   const [playing, isPlaying] = useState(false);
   const vidRef = useRef(null);
+  const btnRef = useRef(null);
+
   const handlePlayVideo = () => {
     if (playing) {
       vidRef.current.pause();
@@ -103,14 +105,24 @@ function Splash({ setShowSplash }) {
     }
     isPlaying(!playing);
   };
+  useEffect(()=>{
+    const btn = document.getElementById("btnEnter")
+    if(videoLoaded && btn){
+      btn.focus() 
+    }
+  },[videoLoaded])
 
   return (
     <div className="relative m-0 p-0 flex justify-center items-center py-8 w-screen h-screen">
       {videoLoaded && (
         <div className="flex flex-col gap-4 justify-center items-center">
           <button
-            className="hover:animate-pulse px-4 py-3 border border-gray-700 z-50 text-white tracking-widest text-3xl uppercase bg-black bg-opacity-50"
-            onClick={() => setShowSplash(false)}
+            id="btnEnter"
+            tabIndex={0}
+            className="focus:outline-none hover:animate-pulse px-4 py-3 border border-gray-700 z-50 text-white tracking-widest text-3xl uppercase bg-black bg-opacity-50"
+            onClick={(e) =>{
+              setShowSplash(false)
+            } }
           >
             Enter
           </button>
