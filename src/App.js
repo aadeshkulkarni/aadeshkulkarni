@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from "react";
+import { FaGithub, FaInstagram, FaLinkedin, FaStackOverflow, FaYoutube } from "react-icons/fa6";
 import "./App.css";
 
 const myprods = [
+  {
+    title: "Figuringout.life",
+    url: "https://figuringout.life",
+  },
   {
     title: "Sanchay.ai",
     url: "https://sanchay.ai",
@@ -79,10 +84,10 @@ const miniProjects = [
 ];
 
 function App() {
-  const [showSplashscreen, setShowSplash] = useState(true);
+  const [showSplashscreen, setShowSplash] = useState(false);
   if (showSplashscreen) return <Splash setShowSplash={setShowSplash} />;
   return (
-    <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tl from-sky-500 to-sky-700 text-white md:bg-white md:bg-gradient-t md:from-white md:to-white">
+    <div className="min-w-full w-screen h-full min-h-screen flex flex-col md:gap-8 justify-center items-center py-8 md:py-16 bg-gradient-to-tr from-sky-900 to-sky-800 text-white md:bg-black md:bg-gradient-to-r md:from-slate-800 md:to-slate-900">
       <ProfileCard />
       <Products title="Tech Products" products={myprods} />
       <Products title="Passion Projects" products={projects} />
@@ -91,7 +96,7 @@ function App() {
   );
 }
 function Splash({ setShowSplash }) {
-  const [videoLoaded,setVideoLoaded] = useState(false)
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [muted, setMuted] = useState(true);
   const [playing, isPlaying] = useState(false);
   const vidRef = useRef(null);
@@ -105,12 +110,12 @@ function Splash({ setShowSplash }) {
     }
     isPlaying(!playing);
   };
-  useEffect(()=>{
-    const btn = document.getElementById("btnEnter")
-    if(videoLoaded && btn){
-      btn.focus() 
+  useEffect(() => {
+    const btn = document.getElementById("btnEnter");
+    if (videoLoaded && btn) {
+      btn.focus();
     }
-  },[videoLoaded])
+  }, [videoLoaded]);
 
   return (
     <div className="relative m-0 p-0 flex justify-center items-center py-8 w-screen h-screen">
@@ -120,9 +125,9 @@ function Splash({ setShowSplash }) {
             id="btnEnter"
             tabIndex={0}
             className="focus:outline-none hover:animate-pulse px-4 py-3 border border-gray-700 z-50 text-white tracking-widest text-3xl uppercase bg-black bg-opacity-50"
-            onClick={(e) =>{
-              setShowSplash(false)
-            } }
+            onClick={(e) => {
+              setShowSplash(false);
+            }}
           >
             Enter
           </button>
@@ -136,7 +141,7 @@ function Splash({ setShowSplash }) {
         >
           <img
             className="w-8 h-8 rounded-full"
-            src={muted ? "./mute.svg" : "./unmute.svg" }
+            src={muted ? "./mute.svg" : "./unmute.svg"}
             alt="mute"
           />
         </button>
@@ -151,10 +156,10 @@ function Splash({ setShowSplash }) {
         ref={vidRef}
         autoPlay
         playsInline
-        onLoadedData={()=>{
-          setVideoLoaded(true)
-          isPlaying(true)
-          handlePlayVideo()
+        onLoadedData={() => {
+          setVideoLoaded(true);
+          isPlaying(true);
+          handlePlayVideo();
         }}
         muted={muted}
         src={"./videos/splash.mp4"}
@@ -168,7 +173,7 @@ function Splash({ setShowSplash }) {
 
 function ProfileCard() {
   return (
-    <div className="drop-shadow-lg w-full md:w-2/3 p-4 px-8 md:border grid grid-cols-12 items-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 md:shadow-lg md:shadow-gray-500  text-white">
+    <div className="drop-shadow-sm w-full md:rounded-full md:w-2/3 p-4 px-8 grid grid-cols-12 items-center gap-4 md:bg-gradient-to-r md:from-sky-800 md:to-sky-700 md:shadow-lg md:shadow-gray-800  text-white">
       <div className="w-full flex justify-center col-span-12 items-center md:col-span-4">
         <img
           className="rounded-full border-2 m-4 md:m-8 w-[240px]"
@@ -177,45 +182,32 @@ function ProfileCard() {
           alt="aadesh kulkarni"
           onError={({ currentTarget }) => {
             currentTarget.onerror = null; // prevents looping
-            currentTarget.src="./aadesh-kulkarni.jpg"
+            currentTarget.src = "./aadesh-kulkarni.jpg";
           }}
         />
       </div>
       <div className="w-full col-span-12 md:col-span-8 flex flex-col justify-center items-center md:items-start">
-        <div className="text-4xl md:text-6xl font-bold drop-shadow-lg">Aadesh Kulkarni</div>
-        <div className="p-2 text-md md:text-lg font-light text-gray-100 text-center md:text-left">
+        <div className="text-4xl md:text-5xl tracking-wide font-bold drop-shadow-lg">
+          Aadesh Kulkarni
+        </div>
+        <div className="p-2 text-xs md:text-lg font-light  text-gray-100 text-center md:text-left">
           Web Engineering | Frontend | Backend | Generative AI
         </div>
-        <div className="w-full flex flex-wrap gap-4 p-4 flex-col md:grid md:grid-cols-12 md:flex-row justify-center items-center md:justify-start text-lg md:text-md tracking-wider">
-          <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
-            href="https://www.linkedin.com/in/aadeshkulkarni/"
-          >
-            LinkedIn
+        <div className="w-full flex gap-8 p-4 md:pr-16 justify-start items-center text-lg md:text-md tracking-wider">
+          <a href="https://www.linkedin.com/in/aadeshkulkarni/" className="hover:animate-pulse">
+            <FaLinkedin size={"32px"} />
           </a>
-          <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
-            href="https://www.youtube.com/@AadeshKulkarni"
-          >
-            Youtube
+          <a href="https://www.youtube.com/@AadeshKulkarni" className="hover:animate-pulse">
+            <FaYoutube size={"32px"} />
           </a>
-          <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
-            href="https://github.com/aadeshkulkarni"
-          >
-            Github
+          <a href="https://github.com/aadeshkulkarni" className="hover:animate-pulse">
+            <FaGithub size={"32px"} />
           </a>
-          <a
-            className="md:col-span-4 w-full md:w-auto text-center px-4 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
-            href="https://www.instagram.com/aadeshkulkarni/"
-          >
-            Instagram
+          <a href="https://www.instagram.com/aadeshkulkarni/" className="hover:animate-pulse">
+            <FaInstagram size={"32px"} />
           </a>
-          <a
-            className="md:col-span-4 w-full md:w-auto text-center px-2 py-3 md:py-2 border border-sky-600 bg-sky-900 bg-opacity-20 hover:bg-opacity-50"
-            href="https://stackoverflow.com/users/8389274/aadesh"
-          >
-            Stackoverflow
+          <a href="https://stackoverflow.com/users/8389274/aadesh" className="hover:animate-pulse">
+            <FaStackOverflow size={"32px"} />
           </a>
         </div>
       </div>
@@ -226,7 +218,7 @@ function ProfileCard() {
 function Products({ title, products }) {
   const [show, setShow] = useState(false);
   return (
-    <div className="w-full md:w-2/3 p-4 border-t md:border border-sky-600 md:border-gray-200 flex flex-col justify-center gap-4 md:bg-gradient-to-r md:from-sky-500 md:to-sky-700 text-white md:shadow-lg md:shadow-gray-500 ">
+    <div className="w-full md:w-2/3 p-4 border-sky-600 md:rounded-lg flex flex-col justify-center  gap-4 md:bg-gradient-to-r md:from-sky-800 md:to-sky-700 text-white md:shadow-lg md:shadow-gray-800 md:bg-opacity-50">
       <div
         className="p-4 text-2xl font-bold tracking-wide flex justify-between items-center cursor-pointer"
         onClick={() => setShow(!show)}
@@ -234,13 +226,13 @@ function Products({ title, products }) {
         {title} <button>↡</button>
       </div>
       {show && (
-        <div className="flex flex-col justify-center items-center gap-2 w-full">
+        <div className="flex flex-col justify-center items-center w-full">
           {products &&
             products.map((product) => (
-              <div className="w-full p-4 flex justify-between items-center border-b border-sky-600">
-                <div className="tracking-wide font-normal text-xl">{product.title}</div>
-                <a className="p-2 text-lg hover:animate-pulse" href={product.url}>
-                  →
+              <div className="w-full p-4 pt-6 pb-2 flex justify-between items-center shadow-b-lg border-b border-slate-800 bg-gradient-to-r from-slate-900 to-slate-900 text-gray-300">
+                <a href={product.url} className="flex justify-between items-center w-full">
+                  <div className="font-normal text-lg tracking-wider">{product.title}</div>
+                  <div className="p-2 text-lg hover:animate-pulse">→</div>
                 </a>
               </div>
             ))}
