@@ -19,7 +19,7 @@ const Projects = () => {
       transition={{ delay: 2 }}
       className="grid items-center justify-items-center">
       <Command className="bg-card/70 p-4 shadow-feature-card rounded-3xl md:max-w-[680px] max-h-fit md:max-h-[680px]">
-        <CommandInput className="rounded-2xl p-4 tracking-wider text-md" placeholder="Search" />
+        <CommandInput className="rounded-2xl p-4 tracking-wider text-md" placeholder="Search by skills or project" />
         <CommandList className="p-4 max-h-fit ">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Projects">

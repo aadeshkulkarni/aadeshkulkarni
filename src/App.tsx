@@ -22,13 +22,15 @@ function App() {
           <CardHeader>Hello, I am Aadesh</CardHeader>
           <CardContent className="text-gray-300">
             <p className="mb-4">
-              I love building MVPs and Prototyping. I contribute and maintain open-source projects.
-              A jack of all, master at none. Good at building user-friendly frontend applications
-              and a curiously passionate backend engineer.
+              I’m a passionate Full-stack Engineer with a love for building MVPs and prototypes. I
+              thrive in creating user-friendly front-end experiences while being deeply curious
+              about backend architecture. A strong advocate for open-source, I actively contribute
+              to and maintain projects that drive innovation and collaboration.
             </p>
             <p>
-              Working as an Independent Full-stack Engineer on contract, specialising in the
-              Javascript ecosystem.
+              Currently working independently as a contract engineer, I specialize in the JavaScript
+              ecosystem, crafting scalable solutions and empowering teams to bring their ideas to
+              life.
             </p>
           </CardContent>
           <CardFooter className="p-4 md:px-20 flex w-full justify-between items-center border-t">
@@ -42,7 +44,7 @@ function App() {
               <Youtube className="border p-2 w-10 h-10 rounded-full" />
             </a>
             <a href="https://www.instagram.com/aadeshkulkarni/">
-              <Instagram className="border p-2 w-10 h-10 rounded-full"/>
+              <Instagram className="border p-2 w-10 h-10 rounded-full" />
             </a>
             <a href="https://stackoverflow.com/users/8389274/aadesh-kulkarni">
               <Layers className="border p-2 w-10 h-10 rounded-full" />

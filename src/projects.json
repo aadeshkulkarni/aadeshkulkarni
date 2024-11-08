@@ -12,7 +12,7 @@
   {
     "title": "Sanchay.ai",
     "url": "https://sanchay.ai",
-    "description": "Takes your video and generates video title, description, hashtags, transcription, subtitles and more."
+    "description": "Takes your video and generates video title, description, hashtags, transcription, subtitles and more. | ReactJS | Python | Docker"
   },
   {
     "title": "MahaDev GPT",
@@ -27,32 +27,32 @@
   {
     "title": "Swiggy Spinoff",
     "url": "https://swiggyspinoff.netlify.app/",
-    "description": "Food delivery frontend project"
+    "description": "Food delivery frontend project | ReactJS | Tailwind"
   },
   {
     "title": "Youtube Spinoff",
     "url": "https://youtubespinoff.netlify.app/",
-    "description": "Video streaming frontend project"
+    "description": "Video streaming frontend project | ReactJS | Tailwind"
   },
   {
     "title": "Netlflix Spinoff",
     "url": "https://cinemacentral.netlify.app/",
-    "description": "OTT frontend project"
+    "description": "OTT frontend project | ReactJS | Tailwind"
   },
   {
     "title": "PayTM",
     "url": "https://paytumkaro.netlify.app/",
-    "description": "Full stack Finance app (basic)"
+    "description": "Full stack Finance app (basic) | ExpressJS"
   },
   {
     "title": "Zerodha Landing page",
     "url": "https://aadeshkulkarni.github.io/100x-01-zerodha-warmup/",
-    "description": "Landing page of Zerodha - India's biggest stock broker app"
+    "description": "Landing page of Zerodha - India's biggest stock broker app | HTML | CSS | Javascript"
   },
   {
     "title": "Dwellfox - ThreeJs",
     "url": "https://aadeshkulkarni.github.io/dwellfox-wip/",
-    "description": "A ThreeJS animation experimental landing page"
+    "description": "A ThreeJS animation experimental landing page | ThreeJS"
   },
   {
     "title": "Whack a mole",
