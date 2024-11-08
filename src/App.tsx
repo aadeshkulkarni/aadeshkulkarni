@@ -21,16 +21,19 @@ function App() {
         <Card className="rounded-3xl bg-opacity-50">
           <CardHeader>Hello, I am Aadesh</CardHeader>
           <CardContent className="text-gray-300">
-            <p className="mb-4 text-justify">
+            <p className="mb-4">
               I’m a passionate Full-stack Engineer with a love for building MVPs and prototypes. I
               thrive in creating user-friendly front-end experiences while being deeply curious
               about backend architecture. A strong advocate for open-source, I actively contribute
               to and maintain projects that drive innovation and collaboration.
             </p>
-            <p className="text-justify">
+            <p className="mb-4">
               Currently working independently as a contract engineer, I specialize in the JavaScript
               ecosystem, crafting scalable solutions and empowering teams to bring their ideas to
               life.
+            </p>
+            <p>
+              Below is a list of some of my weekend projects. For extensive details, you can check Github profile.
             </p>
           </CardContent>
           <CardFooter className="p-4 md:px-20 flex w-full justify-between items-center border-t">
