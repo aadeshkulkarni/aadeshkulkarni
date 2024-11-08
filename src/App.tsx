@@ -21,13 +21,13 @@ function App() {
         <Card className="rounded-3xl bg-opacity-50">
           <CardHeader>Hello, I am Aadesh</CardHeader>
           <CardContent className="text-gray-300">
-            <p className="mb-4">
+            <p className="mb-4 text-justify">
               I’m a passionate Full-stack Engineer with a love for building MVPs and prototypes. I
               thrive in creating user-friendly front-end experiences while being deeply curious
               about backend architecture. A strong advocate for open-source, I actively contribute
               to and maintain projects that drive innovation and collaboration.
             </p>
-            <p>
+            <p className="text-justify">
               Currently working independently as a contract engineer, I specialize in the JavaScript
               ecosystem, crafting scalable solutions and empowering teams to bring their ideas to
               life.
