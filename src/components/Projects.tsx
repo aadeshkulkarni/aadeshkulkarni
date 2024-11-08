@@ -9,13 +9,18 @@ import {
 } from "@/components/ui/command";
 import { Button } from "@/components/ui/button";
 import projects from "@/projects.json";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="grid items-center justify-items-center">
-      <Command className="border p-4 shadow-md md:max-w-[680px] md:max-h-[680px]">
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ delay: 2 }}
+      className="grid items-center justify-items-center">
+      <Command className="bg-card/70 p-4 shadow-feature-card rounded-3xl md:max-w-[680px] max-h-fit md:max-h-[680px]">
         <CommandInput className="rounded-2xl p-4 tracking-wider text-md" placeholder="Search" />
-        <CommandList className="p-4 md:max-h-[450px]">
+        <CommandList className="p-4 max-h-fit ">
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Projects">
             {projects.map((project) => (
@@ -42,7 +47,7 @@ const Projects = () => {
           <CommandSeparator />
         </CommandList>
       </Command>
-    </div>
+    </motion.div>
   );
 };
 
