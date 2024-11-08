@@ -1,0 +1,97 @@
+[
+  {
+    "title": "Figuring Out Life",
+    "description": "Thought Journal | NextJS | MongoDB | Shadcn.",
+    "url": "https://figuringout.life"
+  },
+  {
+    "title": "First Issues",
+    "description": "Make your first open-source contribution.",
+    "url": "https://figuringout.life"
+  },
+  {
+    "title": "Sanchay.ai",
+    "url": "https://sanchay.ai",
+    "description": "Takes your video and generates video title, description, hashtags, transcription, subtitles and more."
+  },
+  {
+    "title": "MahaDev GPT",
+    "url": "https://youtu.be/o-uOSFk0ne4?si=kaLe75o-Uq_568UI",
+    "description": "A Vs code extension / copilot for code completion, suggestions, documentation and more."
+  },
+  {
+    "title": "Smart Gardening IoT",
+    "url": "https://youtu.be/fq2ZHWaMGNo?si=cri-lCsed7JpCEHJ",
+    "description": "Home Gardening using IoT + RPi"
+  },
+  {
+    "title": "Swiggy Spinoff",
+    "url": "https://swiggyspinoff.netlify.app/",
+    "description": "Food delivery frontend project"
+  },
+  {
+    "title": "Youtube Spinoff",
+    "url": "https://youtubespinoff.netlify.app/",
+    "description": "Video streaming frontend project"
+  },
+  {
+    "title": "Netlflix Spinoff",
+    "url": "https://cinemacentral.netlify.app/",
+    "description": "OTT frontend project"
+  },
+  {
+    "title": "PayTM",
+    "url": "https://paytumkaro.netlify.app/",
+    "description": "Full stack Finance app (basic)"
+  },
+  {
+    "title": "Zerodha Landing page",
+    "url": "https://aadeshkulkarni.github.io/100x-01-zerodha-warmup/",
+    "description": "Landing page of Zerodha - India's biggest stock broker app"
+  },
+  {
+    "title": "Dwellfox - ThreeJs",
+    "url": "https://aadeshkulkarni.github.io/dwellfox-wip/",
+    "description": "A ThreeJS animation experimental landing page"
+  },
+  {
+    "title": "Whack a mole",
+    "url": "https://whackit-aadesh.netlify.app/",
+    "description": "A miniplayer game for fun. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Fortune Teller",
+    "url": "https://aadeshkulkarni.github.io/fortune-teller/",
+    "description": "A utility game for fun. HTML | CSS | Javascript"
+  },
+  {
+    "title": "New Year countdown",
+    "url": "https://aadeshkulkarni.github.io/New-Year-Countdown/",
+    "description": "A fun utility. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Memory Cards",
+    "url": "https://aadeshkulkarni.github.io/Memory-Cards/",
+    "description": "A fun utility. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Lyrics Search",
+    "url": "https://aadeshkulkarni.github.io/Lyrics-Search/",
+    "description": "A fun utility. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Sadhana",
+    "url": "https://aadeshkulkarni.github.io/sadhana/",
+    "description": "A fun utility for tracking tasks. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Hangman",
+    "url": "https://aadeshkulkarni.github.io/Hangman/",
+    "description": "A word game. HTML | CSS | Javascript"
+  },
+  {
+    "title": "Speed Typer",
+    "url": "https://aadeshkulkarni.github.io/Speed-Typer/",
+    "description": "Typing speed checker. HTML | CSS | Javascript"
+  }
+]
